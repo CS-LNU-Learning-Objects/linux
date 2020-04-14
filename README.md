@@ -18,8 +18,8 @@ The student should get an understanding of the Linux system and its characterist
 [Video on youtube](https://www.youtube.com/watch?v=K81c6R2COmI) - A short introduction to Linux, it's history and use today
 In the video I use [Vagrant](https://www.vagrantup.com/) and [Virtual box](https://www.virtualbox.org/) for running virtual machines with Ubuntu and CentOS. If you have docker installed and running you could start use these commands to start up instances:
 ```bash
-docker run -it ubuntu /bin/bash   # runs and starts a ubuntu container
-docker run -it centos /bin/bash   # runs and starts a centos container
+docker run -it ubuntu bash   # starts and runs a ubuntu container
+docker run -it centos bash   # starts and runs a centos container
 ```
 
 ### The shell
