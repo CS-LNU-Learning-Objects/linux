@@ -21,6 +21,10 @@ In the video I use [Vagrant](https://www.vagrantup.com/) and [Virtual box](https
 docker run -it ubuntu bash   # starts and runs a ubuntu container
 docker run -it centos bash   # starts and runs a centos container
 ```
+If you're using git bash on windows you may need to prefix the command with "winpty".
+```bash
+winpty docker run -it ubuntu bash
+```
 
 ### The shell
 [This text document](https://github.com/CS-LNU-Learning-Objects/linux/blob/master/commands.md)) gives an introduction to a linux systems shell. It will also link to a Cheat Sheet with different commands you should study. At the end of the text there are some exercises to practice on.
