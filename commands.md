@@ -1,5 +1,5 @@
 # Learning linux commands
-This short text is suppose to give you a introduction to handling the terminal in Linux and learning some of the most common commands. This will not be done by us going through every single command and all it flags and parameters. The content of this module is:
+This short text is supposed to give you an introduction to handling the terminal in Linux and learning some of the most common commands. This will not be done by us going through every single command and all its flags and parameters. The content of this module is:
 
 - A short introduction to the shell
 - A list with the commands you should be able to handle
@@ -8,17 +8,17 @@ This short text is suppose to give you a introduction to handling the terminal i
 
 
 ## The shell
-The shell, or the command line interpreter, is a vital tool in a Linux system. It is this program that interprets user commands (either written by the user of read from a script-file). This is the terminal, the promt, and this is the place you will spend most of your time when working with your Linux server.
+The shell, or the command line interpreter, is a vital tool in a Linux system. It is this program that interprets user commands (either written by the user of read from a script-file). This is the terminal, the prompt, and this is the place you will spend most of your time when working with your Linux server.
 
 There are different types of shells in the Linux/Unix-world.
 
-- Bourne Shell (sh) - Developed at AT&T (Bell Laboratories). This is one of the oldest shell and where the name "shell" is from.
+- Bourne Shell (sh) - Developed at AT&T (Bell Laboratories). This is one of the oldest shells and where the name "shell" is from.
 - Korn Shell (ksh), Almquist shell (ash), C-Shell (csh) are different kind of shells that all are different clones of the bourne shell.
 - Bourne-Again Shell (bash) is the GNU-projects implementation and an extended version of the Bourne Shell. This is the most common shell and default on most systems.
 - Z Shell (zsh) - contains a lot of the same features as bash but with a few difference like file globbing and spelling correction.
 
 ### Bash-files
-We will be concentration on the bash shell since it is the default shell on most systems. One thing to notice when talking about your shell is the the system have some different files that can come in handy to know about. All these files are hidden files (having a dot in the beginning of the name) and could be revealed by the `ls -la` command.
+We will be concentrating on the bash shell since it is the default shell on most systems. One thing to notice when talking about your shell is that the system has some different files that can come in handy to know about. All these files are hidden files (having a dot in the beginning of the name) and could be revealed by the `ls -la` command.
 
 - /bin/bash - the executable
 - /etc/profile - The systemwide initialization file, first executed for login shells
@@ -31,28 +31,28 @@ More about this: http://mywiki.wooledge.org/DotFiles
 Of course you can pimp your bash. There are many communities about this. Many developers use the Z Shell(zsh) with the "oh my zsh"-configurations for example: https://github.com/robbyrussell/oh-my-zsh
 
 ## Linux commands
-Enough about the shell it self. To be able to do something on the system you should be able to execute some commands. You have probably done this before by executing the cd-command for changing directory or the ls-command for listing files in the current directory. As said before this module is not going through all different commands. Some of them will be used in the demo videos but to understand them you have to do your own study. To help you along we will give you a link to a cheat sheet that have the most common commands written down. You should go through them (read about them with the man-command) and get use to them.
+Enough about the shell itself. To be able to do something on the system you should be able to execute some commands. You have probably done this before by executing the cd-command for changing directory or the ls-command for listing files in the current directory. As stated before, this module is not going through all the different commands. Some of them will be used in the demo videos but to understand them you have to do your own studying. To help you along we will give you a link to a cheat sheet that has the most common commands written down. You should go through them (read about them with the man-command) and get used to them.
 
 First of all you might want to look at the demos where I show you how to get a Ubuntu- and centOS-server up and running with vagrant. This will give you playing grounds when testing your commands. In the demo video I also talk about the man-command and something about the built-in text editors you can find in the Linux systems.
 
 You find the cheat sheet here: https://files.fosswire.com/2007/08/fwunixref.pdf, it is CC-licensed from https://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/
 
 ## stdin, stdout, stderr and pipes
-One thing to know about when executing commands/programs in the bash-terminal is standard streams. In computer programming are standard streams pre-connected input and output. The **standard output (stdout)** is a place that a program can send information (like text). The program never know where this information goes. It could be a ordinary file, a printer or on the screen.
+One thing to know about when executing commands/programs in the bash-terminal is standard streams. In computer programming are standard streams pre-connected input and output. The **standard output (stdout)** is a place where a program can send information (like text). The program never knows where this information goes. It could be an ordinary file, a printer or on the screen.
 
-The **standard input(stdin)** is a place where a program gets information from. It never knows from where. It could be from a file, from the keyboard or from a output from another program. This makes it possible to pipe commands which means that you can combine to commands where the first program execution produces a stdout that the next program takes as stdin and processes. This goes well with the philosophy in Unix where you should have small programs with minimal features that are good at one thing. An example of this could be:
+The **standard input(stdin)** is a place where a program gets information from. It never knows from where. It could be from a file, from the keyboard or from an output from another program. This makes it possible to pipe commands which means that you can combine two commands where the first program execution produces a stdout that the next program takes as stdin and processes. This goes well with the philosophy in Unix where you should have small programs with minimal features that are good at one thing. An example of this could be:
 
 `ls -a | grep ba`
 
-This list all files, which produces a stdout and by using the pipe-character (|) is sent to the grep command that takes it as stdin and outputs all files beginning with "ba".
+This lists all files, which produces a stdout and by using the pipe-character (|) it is sent to the grep command that takes it as stdin and outputs all files beginning with "ba".
 
 `ps | grep bash | cut -d ' ' -f 2`
 
-Of course you could pipe several times. The above command uses "ps" to list all processes on the system, filter them with "grep" to just show the bash process and use cut to just show the processID.
+Of course you could pipe several times. The above command uses "ps" to list all processes on the system, filters them with "grep" to just show the bash process and uses cut to just show the processID.
 
 The **standard error (stderr)** is where eventual error messages are sent to.
 
-The stdin, stdout and stderr are known as **file descriptors**. So when a program is executed these three file descriptors opens. 0 for stdin, 1 for stdout and 2 for stderr. We can use this with **redirection operators**. Here are some examples.
+The stdin, stdout and stderr are known as **file descriptors**. So when a program is executed these three file descriptors open. 0 for stdin, 1 for stdout and 2 for stderr. We can use this with **redirection operators**. Here are some examples.
 
 ```bash
 # writes the output of the /proc/cpuinfo into a file named cpu.txt
@@ -83,7 +83,7 @@ After doing your homework with the commands and looking at the demo video you ca
 6. Remove the directory "dump" (including the "test.txt"-file)
 7. In the "dump2"-directory rename the file test2.txt to test.txt
 8. Create a new file called ".config". Create a gzip-file in your home directory with these two files (test.txt and .config) and name it archive.tar.gz
-9. Remove the "dump2"-directory and it contents and remove the newly created compressed file
+9. Remove the "dump2"-directory and its contents and remove the newly created compressed file
 10. Use the netstat command to list all ESTABLISHED tcp ports in your system
 11. Write a oneline-command that clones one github repository and creates a tar with Bzip compression with that git-folder. You may need to install "git" first using `sudo apt-get install git` or `sudo yum install git`
 
